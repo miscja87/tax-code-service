@@ -1,6 +1,6 @@
 ## 📋 About
 
-The **Tax Code Service** is a simple JSON API service for extraction of informations and generation of italian tax codes. It's currently deployed on:
+The **Tax Code Service** is a simple JSON API collection of services for extraction of informations and generation of italian tax codes. It's currently deployed on:
 
 [http://www.handlesport.com/tax-code-service](http://www.handlesport.com/tax-code-service "Tax Code Service")
 
@@ -37,6 +37,10 @@ You can test the services:
 ## ✏️ To do
 
 - 📌 Improve request validation
+
+- 📌 Manage foreign tax codes
+
+- 📌 Manage omocody problem
 
 - 📌 Database integration
 
