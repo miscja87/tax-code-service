@@ -1,0 +1,123 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Tax Code Service",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://www.handlesport.com/tax-code-service"
+        }
+    ],
+    "paths": {
+        "/extract/{taxCode}": {
+            "get": {
+                "parameters": [
+                    {
+                        "name": "taxCode",
+                        "in": "path",
+                        "description": "Italian tax code to extract",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "default": "RSSMRA80A41F205B"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "dateOfBirth": {
+                                            "description": "Date of Birth",
+                                            "type": "string",
+                                            "example": "01/01/1980"
+                                        },
+                                        "cityOfBirth": {
+                                            "description": "City of Birth",
+                                            "type": "string",
+                                            "example": "Milano"
+                                        },
+                                        "gender": {
+                                            "description": "Gender ('M' or 'F')",
+                                            "type": "string",
+                                            "example": "M"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Resource not find"
+                    }
+                }
+            }
+        },
+        "/generate": {
+            "post": {
+                "requestBody": {
+                    "description": "Generate italian tax code",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "name",
+                                    "surname",
+                                    "dateOfBirth",
+                                    "cityOfBirth",
+                                    "gender"
+                                ],
+                                "properties": {
+                                    "name": {
+                                        "description": "Name",
+                                        "type": "string",
+                                        "example": "MARIO"
+                                    },
+                                    "surname": {
+                                        "description": "Surname",
+                                        "type": "string",
+                                        "example": "ROSSI"
+                                    },
+                                    "dateOfBirth": {
+                                        "description": "Date of Birth",
+                                        "type": "string",
+                                        "example": "01/01/1980"
+                                    },
+                                    "cityOfBirth": {
+                                        "description": "City of Birth",
+                                        "type": "string",
+                                        "example": "Milano"
+                                    },
+                                    "gender": {
+                                        "description": "Gender ('M' or 'F')",
+                                        "type": "string",
+                                        "enum": [
+                                            "M",
+                                            "F"
+                                        ],
+                                        "example": "M"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "404": {
+                        "description": "Resource not find"
+                    }
+                }
+            }
+        }
+    }
+}

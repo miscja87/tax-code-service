@@ -1,0 +1,81 @@
+{
+	"info": {
+		"_postman_id": "e8836957-456a-482f-9edd-ff9376eb6919",
+		"name": "TaxCodeService",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "extract",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/vnd.api+json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://handlesport.com/tax-code-service/extract/RSSMRA80A41F205B",
+					"protocol": "http",
+					"host": [
+						"handlesport",
+						"com"
+					],
+					"path": [
+						"tax-code-service",
+						"extract",
+						"RSSMRA80A41F205B"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "generate",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/vnd.api+json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"MARIO\",\r\n    \"surname\": \"ROSSI\",\r\n    \"dateOfBirth\": \"01/01/1980\",\r\n    \"gender\" : \"F\",\r\n    \"cityOfBirth\" : \"MILANO\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://handlesport.com/tax-code-service/generate",
+					"protocol": "http",
+					"host": [
+						"handlesport",
+						"com"
+					],
+					"path": [
+						"tax-code-service",
+						"generate"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
