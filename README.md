@@ -46,6 +46,8 @@ You can test the services:
 
 - 📌 Add caching
 
+- 📌 Test suite
+
 - 📌 Complete documentation
 
 ## 🧑🏻 Author
